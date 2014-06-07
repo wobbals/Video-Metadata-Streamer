@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D47B7B5C194152DE001362A1 /* TBExampleVideoRender.m in Sources */ = {isa = PBXBuildFile; fileRef = D47B7B5B194152DE001362A1 /* TBExampleVideoRender.m */; };
 		D47B7B5F1942222B001362A1 /* TBExampleVideoCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = D47B7B5E1942222B001362A1 /* TBExampleVideoCapture.m */; };
+		D47B7B6319425385001362A1 /* ForwardErrorCorrection.m in Sources */ = {isa = PBXBuildFile; fileRef = D47B7B6219425385001362A1 /* ForwardErrorCorrection.m */; };
 		D4F8FDC8194136EA00364672 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4F8FDC6194136EA00364672 /* InfoPlist.strings */; };
 		D4F8FDCA194136EA00364672 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F8FDC9194136EA00364672 /* main.m */; };
 		D4F8FDCE194136EA00364672 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F8FDCD194136EA00364672 /* AppDelegate.m */; };
@@ -57,6 +58,8 @@
 		D47B7B5D1942222B001362A1 /* TBExampleVideoCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBExampleVideoCapture.h; sourceTree = "<group>"; };
 		D47B7B5E1942222B001362A1 /* TBExampleVideoCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBExampleVideoCapture.m; sourceTree = "<group>"; };
 		D47B7B601942293A001362A1 /* MetadataConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetadataConfig.h; sourceTree = "<group>"; };
+		D47B7B6119425385001362A1 /* ForwardErrorCorrection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForwardErrorCorrection.h; sourceTree = "<group>"; };
+		D47B7B6219425385001362A1 /* ForwardErrorCorrection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForwardErrorCorrection.m; sourceTree = "<group>"; };
 		D4F8FDBA194136EA00364672 /* VideoMetadata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoMetadata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F8FDC5194136EA00364672 /* VideoMetadata-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VideoMetadata-Info.plist"; sourceTree = "<group>"; };
 		D4F8FDC7194136EA00364672 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 				D47B7B5E1942222B001362A1 /* TBExampleVideoCapture.m */,
 				D47B7B5A194152DE001362A1 /* TBExampleVideoRender.h */,
 				D47B7B5B194152DE001362A1 /* TBExampleVideoRender.m */,
+				D47B7B6119425385001362A1 /* ForwardErrorCorrection.h */,
+				D47B7B6219425385001362A1 /* ForwardErrorCorrection.m */,
 			);
 			path = VideoMetadata;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				D47B7B5C194152DE001362A1 /* TBExampleVideoRender.m in Sources */,
 				D4F8FDF9194137A100364672 /* MetadataEncoder.m in Sources */,
 				D4F8FDCE194136EA00364672 /* AppDelegate.m in Sources */,
+				D47B7B6319425385001362A1 /* ForwardErrorCorrection.m in Sources */,
 				D4F8FDCA194136EA00364672 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

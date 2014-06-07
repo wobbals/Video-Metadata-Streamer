@@ -8,6 +8,7 @@
 
 #import "MetadataEncoder.h"
 #import "MetadataConfig.h"
+#import "ForwardErrorCorrection.h"
 
 @implementation MetadataEncoder {
     /** 
@@ -54,8 +55,12 @@
                                                   length:strlen(someData)];
         char payload[] = "helloworld!";
         uint8_t payloadSize = strlen(payload);
+        NSData* mulePayload = [NSData dataWithBytes:payload length:payloadSize];
+        mulePayload = [ForwardErrorCorrection encodeTruncationExpansionWithData:mulePayload];
+        payloadSize = mulePayload.length;
+        
         [_muleData appendBytes:&payloadSize length:sizeof(payloadSize)];
-        [_muleData appendBytes:payload length:strlen(payload)];
+        [_muleData appendData:mulePayload];
         
         randU = (int32_t*)calloc(_muleData.length, sizeof(int32_t));
         randV = (int32_t*)calloc(_muleData.length, sizeof(int32_t));

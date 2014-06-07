@@ -15,6 +15,7 @@
 // Symmetric magic number we'll look for to identify the data sequence
 #define MULE_MAGIC_NUMBER { 0x9F, 0x75, 0xF2, 0x75, 0x9F, 0x00 }
 
+// TODO: Truncation does not currently work on odd numbers of bits.
 #define MULE_DISCARD_BITS 2
 
 #endif

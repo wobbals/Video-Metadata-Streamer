@@ -8,6 +8,7 @@
 
 #import "MetadataDecoder.h"
 #import "MetadataConfig.h"
+#import "ForwardErrorCorrection.h"
 
 @implementation MetadataDecoder {
     id<OTVideoRender> _videoRender;
@@ -52,7 +53,7 @@
     return total / (ASSUMED_MACROBLOCK_SIZE * ASSUMED_MACROBLOCK_SIZE);
 }
 
-- (BOOL)number:(int)number isWithin:(int)within of:(int)target {
+static inline bool within(int number, int within, int target) {
     return number >= target - within && number <= target + within;
 }
 
@@ -68,7 +69,7 @@
         if (discoveryIndex == 0) {
             magicStartIndex = traversalIndex;
         }
-        if ([self number:val isWithin:1 << MULE_DISCARD_BITS of:target]) {
+        if (within(val, 1 << MULE_DISCARD_BITS, target)) {
             target = magic[++discoveryIndex];
         } else if (discoveryIndex > 0) {
             discoveryIndex = 0;
@@ -110,8 +111,9 @@
         aByte = [[decodeVector objectAtIndex:i] intValue];
         [payload appendBytes:&aByte length:1];
     }
+    NSData* subload = [ForwardErrorCorrection decodeTruncationExpansionWithData:payload];
     NSString* decodedPayload =
-    [[[NSString alloc] initWithData:payload
+    [[[NSString alloc] initWithData:subload
                            encoding:NSUTF8StringEncoding] autorelease];
     NSLog(@"%@", decodedPayload);
 }
